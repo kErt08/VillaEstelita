@@ -1,0 +1,23 @@
+{
+  "name": "villa-estelita",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:gallery": "vite build",
+    "setup:local": "node scripts/setup-local.cjs",
+    "build:seo": "node scripts/inject-supabase-config.cjs && node scripts/inject-site-url.cjs",
+    "build": "npm run build:gallery && npm run build:seo",
+    "dev:gallery": "vite build --watch"
+  },
+  "dependencies": {
+    "@use-gesture/react": "^10.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.108.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "sharp": "^0.35.2",
+    "vite": "^6.0.3"
+  }
+}

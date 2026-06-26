@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Admin Sign In · Villa Estelita</title>
+    <link rel="icon" href="./assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <div class="admin-shell admin-login">
+      <div class="admin-card">
+        <div class="admin-brand" style="margin-bottom: 20px">
+          <img src="./assets/logo.webp" alt="" />
+          <div>
+            <strong>Villa Estelita</strong>
+            <span>Admin sign in</span>
+          </div>
+        </div>
+        <div id="loginAlert" class="admin-alert admin-hidden"></div>
+        <form id="loginForm">
+          <label>
+            Email
+            <input type="email" id="loginEmail" required autocomplete="username" placeholder="Enter admin email" />
+          </label>
+          <label>
+            Password
+            <span class="password-field">
+              <input type="password" id="loginPassword" required autocomplete="current-password" placeholder="Enter password" />
+              <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false">
+                <svg class="password-toggle__icon password-toggle__icon--show" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12 5C7 5 2.73 8.11 1 12.5c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 8.11 17 5 12 5Zm0 12.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-2.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                </svg>
+                <svg class="password-toggle__icon password-toggle__icon--hide" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M3.27 2.5 2 3.77l2.74 2.74C2.73 8.11 1 11.22 1 15.61c1.73 4.39 6 7.5 11 7.5 2.04 0 3.94-.52 5.57-1.43l2.96 2.96L22.73 21.5 21.46 20.23l-18.19-17.73ZM12 19.11a6.89 6.89 0 0 1-5.57-2.89l1.42-1.42a4.89 4.89 0 0 0 6.3-6.3l1.42-1.42A6.89 6.89 0 0 1 12 19.11Zm7.24-3.35-1.55-1.55a9.77 9.77 0 0 0 1.55-3.21c-1.35-3.4-4.68-5.9-8.24-5.9-.87 0-1.71.12-2.5.34l-1.66-1.66c1.12-.45 2.34-.68 3.66-.68 4.55 0 8.46 3.03 9.74 7.5-.47 1.48-1.25 2.82-2.24 3.91Z"/>
+                </svg>
+              </button>
+            </span>
+          </label>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px">Sign in</button>
+        </form>
+        <p class="admin-muted" style="margin-top: 16px">
+          Authorized administrators only. This page is not linked on the public site.
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="./js/supabase-config.js"></script>
+    <script src="./js/supabase-client.js"></script>
+    <script src="./js/admin-auth.js"></script>
+    <script src="./js/admin-password-toggle.js"></script>
+    <script src="./js/admin-login.js"></script>
+  </body>
+</html>

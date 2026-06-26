@@ -1,0 +1,84 @@
+VILLA ESTELITA — GitHub upload checklist
+=========================================
+
+Upload everything EXCEPT:
+  - secret/          (your keys — stays on your PC only)
+  - node_modules/    (too large — Vercel runs npm install)
+  - js/supabase-config.js  (generated from secret/ locally or Vercel env vars)
+
+ROOT FILES
+  index.html
+  Villa Estelita.html
+  admin.html
+  admin-dashboard.html
+  admin-logs.html
+  package.json
+  package-lock.json
+  vite.config.js
+  vercel.json
+  robots.txt
+  sitemap.xml
+  .gitignore
+  .vercelignore
+
+assets/  (required WebP + logo.png)
+  assets/logo.png
+  assets/logo.webp
+  assets/resort-exterior-night.webp
+  assets/resort-patio.webp
+  assets/resort-pool-courtyard.webp
+  assets/gallery/*.webp
+
+css/
+  css/styles.css
+  css/chatbot.css
+  css/admin.css
+
+js/  (NOT supabase-config.js)
+  js/admin-auth.js
+  js/admin-login.js
+  js/admin-password-toggle.js
+  js/admin-site-editor.js
+  js/admin-logs-init.js
+  js/admin-logs-page.js
+  js/admin.js
+  js/chatbot-knowledge.js
+  js/chatbot.js
+  js/gallery.bundle.js
+  js/gallery.css
+  js/googlec0ca68a91466f3b4.html
+  js/location.js
+  js/scroll-reveal.js
+  js/site-content.js
+  js/site-url.js
+  js/supabase-client.js
+  js/supabase-config.example.js
+
+src/
+  src/gallery.jsx
+  src/components/DomeGallery.jsx
+  src/components/DomeGallery.css
+  src/lib/fetch-gallery.js
+
+scripts/
+  scripts/convert-to-webp.mjs
+  scripts/inject-site-url.cjs
+  scripts/inject-supabase-config.cjs
+  scripts/setup-local.cjs
+
+supabase/
+  supabase/schema.sql
+  supabase/patch-admin-email.sql
+
+public/
+  public/googlec0ca68a91466f3b4.html
+
+OPTIONAL (skip to save space): old PNG/JPG in assets/
+
+VERCEL ENV VARS (after upload)
+  VILLA_SUPABASE_URL
+  VILLA_SUPABASE_ANON_KEY
+
+LOCAL TEST BEFORE UPLOAD
+  node scripts/setup-local.cjs
+  then open admin.html

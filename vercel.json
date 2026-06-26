@@ -1,0 +1,32 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "buildCommand": "node scripts/inject-supabase-config.cjs && node scripts/inject-site-url.cjs",
+  "outputDirectory": ".",
+  "installCommand": "echo Skipping install — static site with pre-built assets",
+  "redirects": [
+    {
+      "source": "/Villa Estelita.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Villa%20Estelita.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [{ "key": "Content-Type", "value": "application/xml; charset=utf-8" }]
+    }
+  ]
+}
